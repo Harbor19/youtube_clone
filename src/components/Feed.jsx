@@ -10,7 +10,7 @@ const Feed = () => {
   const [videos, setVideos] = useState([])
 
   useEffect(() => {
-    fetchFromAPI(`?part=snippet&q=${selectedCategory}`)
+    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
     .then((data)=> setVideos(data.items)) 
   }, [selectedCategory])
 
@@ -31,7 +31,7 @@ const Feed = () => {
         />
 
         <Typography className='copyright' variant='body2' sx={{ mt: 1.5, color: '#fff'}} >
-          Copyright 2024 Abolade Michael
+          Copyright 2024 © Abolade Michael
         </Typography>
       </Box>
 
