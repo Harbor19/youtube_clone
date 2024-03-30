@@ -21,7 +21,6 @@ const VideoDetail = () => {
 
 
   if (!videoDetail?.snippet) return 'Loading...'
-  if (!videos?.id) return 'loading...'
   
   
   const { snippet: {title, channelId, channelTitle }, statistics: { viewCount, likeCount } } = videoDetail;
@@ -54,11 +53,12 @@ const VideoDetail = () => {
             </Stack>
           </Box>
         </Box>
+        <Box px={{ md:1, xs: 5}} justifyContent="center" alignItems="center">
+          <Videos videos={videos} direction="column"/>
+        </Box>
       </Stack>
 
-      <Box px={{ md:1, xs: 5}} justifyContent="center" alignItems="center">
-        <Videos videos={videos} direction="column"/>
-      </Box>
+      
 
     </Box>
   )
